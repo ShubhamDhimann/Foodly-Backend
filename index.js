@@ -15,7 +15,10 @@ const jwtSecret = "iamfounderandceooffoodly"
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: 'https://foodly-138t.onrender.com' }));
+app.use(cors({
+  origin: ['https://foodly-138t.onrender.com', 'http://localhost:5173'],
+  credentials: true
+}));
 
 mongoose.connect("mongodb+srv://Shubham:Shubham%40123@foodly-cluster1.5enl5.mongodb.net/Foodly?retryWrites=true&w=majority")
 
