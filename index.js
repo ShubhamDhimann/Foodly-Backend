@@ -36,6 +36,8 @@ app.get('/', (req, res) => {
   `)
 })
 
+app.get('/ping', (req, res) => res.status(200).send("Alive"));
+
 app.get('/getFoodData', async (req, res) => {
   try {
     const allDishes = await Dish.find();
